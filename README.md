@@ -614,4 +614,4 @@ Mayoritas tabel dalam database MasjidTaqwa telah memenuhi bentuk normal BCNF, ya
 
 Namun, struktur tabel `donasi` merupakan trade-off yang dapat diterima antara normalisasi ketat dan kebutuhan bisnis. Dengan mempertahankan informasi donatur langsung di tabel donasi, aplikasi dapat menangani donasi anonim atau satu kali dengan lebih efisien.
 
-Secara keseluruhan, skema database sudah terstruktur dengan baik dan mempertimbangkan keseimbangan antara konsistensi data dan performa aplikasi. 
+Secara keseluruhan, skema database sudah terstruktur dengan baik dan mempertimbangkan keseimbangan antara konsistensi data dan performa aplikasi. # DashboardAdminn
