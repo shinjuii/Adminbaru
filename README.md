@@ -1,6 +1,5 @@
-# 🕌 Sidontaq - Aplikasi Sistem Informasi Manajemen Donasi Pembangunan Masjid Taqwa Muhammadiyah Batam Kota
-<img src="public/img/logo-app.jpg" alt="Logo Masjid Taqwa" width="500"/>
 
+<<<<<<< HEAD
 ![MIT License](https://img.shields.io/badge/license-MIT-blue.svg) ![React](https://img.shields.io/badge/React-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Laravel](https://img.shields.io/badge/Laravel-%23F05340.svg?style=for-the-badge&logo=laravel&logoColor=white) ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) ![MySQL](https://img.shields.io/badge/MySQL-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
 
 
@@ -615,3 +614,5 @@ Mayoritas tabel dalam database MasjidTaqwa telah memenuhi bentuk normal BCNF, ya
 Namun, struktur tabel `donasi` merupakan trade-off yang dapat diterima antara normalisasi ketat dan kebutuhan bisnis. Dengan mempertahankan informasi donatur langsung di tabel donasi, aplikasi dapat menangani donasi anonim atau satu kali dengan lebih efisien.
 
 Secara keseluruhan, skema database sudah terstruktur dengan baik dan mempertimbangkan keseimbangan antara konsistensi data dan performa aplikasi. # DashboardAdminn
+=======
+>>>>>>> 9458c0aeed9a33d8bd222b4f69e33467278e076a
