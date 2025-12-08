@@ -39,7 +39,7 @@ const LoginBaru = () => {
       {/* Overlay */}
       <div className="absolute inset-0 z-0"
         style={{
-          background: `linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(89,185,151,0.8))`,
+          background: `linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(62, 95, 68, 0.8))`,
         }}></div>
 
       <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
@@ -63,7 +63,7 @@ const LoginBaru = () => {
 
             <div className="absolute inset-0 z-10"
               style={{
-                background: `linear-gradient(to bottom right, rgba(89,185,151,0.5), rgba(0,0,0,0.4))`
+                background: `linear-gradient(to bottom right, rgba(108, 140, 115, 0.6), rgba(62, 95, 68, 0.5))`
               }}></div>
 
             <div className="relative flex flex-col justify-evenly h-full py-10 px-4 text-white z-10">
@@ -95,32 +95,53 @@ const LoginBaru = () => {
             <div className="max-w-md mx-auto">
 
               <div className="flex justify-between items-center mb-6">
-                <h1 className="text-2xl font-bold text-gray-800">Masuk ke Akun Anda</h1>
-
+                <h1 className="text-2xl font-bold" style={{ color: '#1E1E1E' }}>Masuk ke Akun Anda</h1>
               </div>
 
               {/* Form Login */}
               <form onSubmit={handleSubmit} className="space-y-5">
 
                 <div>
-                  <label className="block text-gray-700 font-medium mb-1">Email</label>
+                  <label className="block font-medium mb-1" style={{ color: '#1E1E1E' }}>Email</label>
                   <input
                     type="email"
                     value={email}
                     required
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full border border-gray-300 rounded-lg py-3 px-4 focus:ring-2 focus:ring-[#59B997]"
+                    className="w-full border border-gray-300 rounded-lg py-3 px-4 transition-all outline-none"
+                    style={{
+                      borderColor: '#e5e7eb'
+                    }}
+                    onFocus={(e) => {
+                      e.target.style.borderColor = '#3E5F44';
+                      e.target.style.boxShadow = '0 0 0 3px rgba(62, 95, 68, 0.1)';
+                    }}
+                    onBlur={(e) => {
+                      e.target.style.borderColor = '#e5e7eb';
+                      e.target.style.boxShadow = 'none';
+                    }}
                   />
                 </div>
 
                 <div>
-                  <label className="block text-gray-700 font-medium mb-1">Kata Sandi</label>
+                  <label className="block font-medium mb-1" style={{ color: '#1E1E1E' }}>Kata Sandi</label>
                   <input
                     type="password"
                     value={password}
                     required
                     onChange={(e) => setPassword(e.target.value)}
-                    className="w-full border border-gray-300 rounded-lg py-3 px-4 focus:ring-2 focus:ring-[#59B997]"
+                    className="w-full border border-gray-300 rounded-lg py-3 px-4 transition-all outline-none"
+                    style={{
+                      borderColor: '#e5e7eb'
+                    }}
+                    onFocus={(e) => {
+                      e.target.style.borderColor = '#3E5F44';
+                      e.target.style.boxShadow = '0 0 0 3px rgba(62, 95, 68, 0.1)';
+                    }}
+                    onBlur={(e) => {
+                      e.target.style.borderColor = '#e5e7eb';
+                      e.target.style.boxShadow = 'none';
+                    }}
                   />
                 </div>
 
@@ -130,23 +151,34 @@ const LoginBaru = () => {
                       type="checkbox"
                       checked={remember}
                       onChange={(e) => setRemember(e.target.checked)}
-                      className="h-4 w-4 text-[#59B997]"
+                      className="h-4 w-4"
+                      style={{ 
+                        accentColor: '#3E5F44'
+                      }}
                     />
-                    Ingat Saya
+                    <span style={{ color: '#1E1E1E' }}>Ingat Saya</span>
                   </label>
-
                 </div>
 
                 {/* Login Button */}
                 <button
                   type="submit"
                   disabled={loading}
-                  className="bg-[#59B997] hover:bg-[#4DA987] text-white font-semibold rounded-lg py-3 w-full transition">
+                  className="text-white font-semibold rounded-lg py-3 w-full transition"
+                  style={{ 
+                    background: 'linear-gradient(to right, #3E5F44, #6C8C73)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.background = 'linear-gradient(to right, #2d4533, #57735e)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.background = 'linear-gradient(to right, #3E5F44, #6C8C73)';
+                  }}>
                   {loading ? "Memproses..." : "Masuk"}
                 </button>
               </form>
 
-              <div className="mt-8 text-center text-gray-500 text-xs">
+              <div className="mt-8 text-center text-xs" style={{ color: '#5C6D5D' }}>
                 <p>&copy; 2025 EcoTrack. All rights reserved.</p>
               </div>
 

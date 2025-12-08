@@ -11,9 +11,9 @@ export default function Edukasi() {
   const [itemToDelete, setItemToDelete] = React.useState(null);
 
   const data = [
-    { id: 1, judul: "Ayo Kurangi Emisi Kendaraan!", kategori: "Lingkungan", views: 245, image: "🌱" },
-    { id: 2, judul: "Cara Hemat Energi di Rumah", kategori: "Energi", views: 189, image: "⚡" },
-    { id: 3, judul: "Manfaat Jalan Kaki", kategori: "Kesehatan", views: 312, image: "🚶" },
+    { id: 1, judul: "Ayo Kurangi Emisi Kendaraan!", kategori: "Lingkungan", image: "🌱" },
+    { id: 2, judul: "Cara Hemat Energi di Rumah", kategori: "Energi", image: "⚡" },
+    { id: 3, judul: "Manfaat Jalan Kaki", kategori: "Kesehatan", image: "🚶" },
   ];
 
   const categories = ["all", "Lingkungan", "Energi", "Kesehatan"];
@@ -47,40 +47,43 @@ export default function Edukasi() {
   };
 
   return (
-    <div className="flex min-h-screen bg-gradient-to-br from-gray-50 via-green-50/30 to-blue-50/30">
+    <div className="flex min-h-screen bg-background">
 
-      {/* ==== SIDEBAR ==== */}
       <AppSidebar />
 
-      {/* ==== CONTENT WRAPPER (GESER KANAN) ==== */}
       <div className="flex-1 ml-[90px] lg:ml-[290px] transition-all duration-300">
+        <div className="p-6 space-y-6">
 
-        {/* ==== PADDING dalam konten ==== */}
-        <div className="p-4 md:p-8 max-w-7xl mx-auto">
 
         {/* Header Section with Animation */}
         <div className="mb-8 animate-fadeIn">
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-2">
+          <h1 className="text-4xl font-bold mb-2" style={{ 
+            background: 'linear-gradient(to right, #3E5F44, #6C8C73)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text'
+          }}>
             Konten Edukasi
           </h1>
-          <p className="text-gray-600">Kelola konten edukasi untuk meningkatkan kesadaran lingkungan</p>
+          <p style={{ color: '#5C6D5D' }}>Kelola konten edukasi untuk meningkatkan kesadaran lingkungan</p>
         </div>
 
         {/* Statistics Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           
           {/* Total Konten */}
           <div className="group bg-white rounded-2xl shadow-lg hover:shadow-xl p-6 border border-gray-100 
                           transform hover:-translate-y-1 transition-all duration-300 cursor-pointer">
             <div className="flex items-center gap-4">
-              <div className="p-4 bg-gradient-to-br from-green-400 to-green-600 rounded-xl text-white 
-                              group-hover:scale-110 transition-transform duration-300 shadow-lg">
+              <div className="p-4 rounded-xl text-white 
+                              group-hover:scale-110 transition-transform duration-300 shadow-lg"
+                   style={{ background: 'linear-gradient(to bottom right, #3E5F44, #6C8C73)' }}>
                 <FiBookOpen size={28} />
               </div>
               <div className="flex-1">
-                <p className="text-gray-500 text-sm font-medium">Total Konten</p>
-                <p className="text-3xl font-bold text-gray-800 mt-1">{data.length}</p>
-                <p className="text-xs text-green-600 mt-1">+2 bulan ini</p>
+                <p style={{ color: '#5C6D5D' }} className="text-sm font-medium">Total Konten</p>
+                <p className="text-3xl font-bold mt-1" style={{ color: '#1E1E1E' }}>{data.length}</p>
+                <p className="text-xs mt-1" style={{ color: '#3E5F44' }}>+2 bulan ini</p>
               </div>
             </div>
           </div>
@@ -89,30 +92,15 @@ export default function Edukasi() {
           <div className="group bg-white rounded-2xl shadow-lg hover:shadow-xl p-6 border border-gray-100 
                           transform hover:-translate-y-1 transition-all duration-300 cursor-pointer">
             <div className="flex items-center gap-4">
-              <div className="p-4 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl text-white 
-                              group-hover:scale-110 transition-transform duration-300 shadow-lg">
+              <div className="p-4 rounded-xl text-white 
+                              group-hover:scale-110 transition-transform duration-300 shadow-lg"
+                   style={{ background: 'linear-gradient(to bottom right, #6C8C73, #3E5F44)' }}>
                 <FiTag size={28} />
               </div>
               <div className="flex-1">
-                <p className="text-gray-500 text-sm font-medium">Total Kategori</p>
-                <p className="text-3xl font-bold text-gray-800 mt-1">3</p>
-                <p className="text-xs text-blue-600 mt-1">Aktif</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Total Views */}
-          <div className="group bg-white rounded-2xl shadow-lg hover:shadow-xl p-6 border border-gray-100 
-                          transform hover:-translate-y-1 transition-all duration-300 cursor-pointer">
-            <div className="flex items-center gap-4">
-              <div className="p-4 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl text-white 
-                              group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <FiEye size={28} />
-              </div>
-              <div className="flex-1">
-                <p className="text-gray-500 text-sm font-medium">Total Views</p>
-                <p className="text-3xl font-bold text-gray-800 mt-1">746</p>
-                <p className="text-xs text-purple-600 mt-1">+15% minggu ini</p>
+                <p style={{ color: '#5C6D5D' }} className="text-sm font-medium">Total Kategori</p>
+                <p className="text-3xl font-bold mt-1" style={{ color: '#1E1E1E' }}>3</p>
+                <p className="text-xs mt-1" style={{ color: '#6C8C73' }}>Aktif</p>
               </div>
             </div>
           </div>
@@ -125,20 +113,25 @@ export default function Edukasi() {
             
             {/* Search Input */}
             <div className="flex-1 relative">
-              <FiSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+              <FiSearch className="absolute left-4 top-1/2 transform -translate-y-1/2" style={{ color: '#5C6D5D' }} size={20} />
               <input
                 type="text"
                 placeholder="Cari konten edukasi..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 
-                           focus:ring-green-500 focus:border-transparent transition-all outline-none"
+                className="w-full pl-12 pr-4 py-3 border rounded-xl transition-all outline-none"
+                style={{ 
+                  borderColor: '#e5e7eb',
+                  focus: { borderColor: '#3E5F44' }
+                }}
+                onFocus={(e) => e.target.style.borderColor = '#3E5F44'}
+                onBlur={(e) => e.target.style.borderColor = '#e5e7eb'}
               />
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery("")}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 
-                             hover:text-gray-600 transition-colors"
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 transition-colors"
+                  style={{ color: '#5C6D5D' }}
                 >
                   <FiX size={20} />
                 </button>
@@ -151,11 +144,15 @@ export default function Edukasi() {
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-4 py-2 rounded-xl font-medium text-sm transition-all duration-300 ${
-                    selectedCategory === cat
-                      ? "bg-gradient-to-r from-green-500 to-green-600 text-white shadow-lg scale-105"
-                      : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                  }`}
+                  className="px-4 py-2 rounded-xl font-medium text-sm transition-all duration-300"
+                  style={selectedCategory === cat ? {
+                    background: 'linear-gradient(to right, #3E5F44, #6C8C73)',
+                    color: 'white',
+                    transform: 'scale(1.05)'
+                  } : {
+                    backgroundColor: '#F3F5F2',
+                    color: '#5C6D5D'
+                  }}
                 >
                   {cat === "all" ? "Semua" : cat}
                 </button>
@@ -165,9 +162,9 @@ export default function Edukasi() {
             {/* Add Button */}
             <button
               onClick={() => setShowModal(true)}
-              className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 
-                         text-white px-6 py-3 rounded-xl font-medium shadow-lg hover:shadow-xl 
+              className="text-white px-6 py-3 rounded-xl font-medium shadow-lg hover:shadow-xl 
                          transition-all flex items-center gap-2 whitespace-nowrap transform hover:scale-105"
+              style={{ background: 'linear-gradient(to right, #3E5F44, #6C8C73)' }}
             >
               <FiPlus size={20} /> Tambah Konten
             </button>
@@ -178,12 +175,13 @@ export default function Edukasi() {
         {filteredData.length === 0 ? (
           <div className="bg-white rounded-2xl shadow-lg p-16 text-center border border-gray-100">
             <div className="text-6xl mb-4">📚</div>
-            <h3 className="text-xl font-semibold text-gray-700 mb-2">Belum ada konten</h3>
-            <p className="text-gray-500 mb-6">Mulai tambahkan konten edukasi untuk ditampilkan di sini</p>
+            <h3 className="text-xl font-semibold mb-2" style={{ color: '#1E1E1E' }}>Belum ada konten</h3>
+            <p style={{ color: '#5C6D5D' }} className="mb-6">Mulai tambahkan konten edukasi untuk ditampilkan di sini</p>
             <button
               onClick={() => setShowModal(true)}
-              className="bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-3 rounded-xl 
-                         font-medium shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2"
+              className="text-white px-6 py-3 rounded-xl font-medium shadow-lg hover:shadow-xl 
+                         transition-all inline-flex items-center gap-2"
+              style={{ background: 'linear-gradient(to right, #3E5F44, #6C8C73)' }}
             >
               <FiPlus size={20} /> Tambah Konten Pertama
             </button>
@@ -198,36 +196,34 @@ export default function Edukasi() {
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 {/* Image Preview */}
-                <div className="h-48 bg-gradient-to-br from-green-100 to-blue-100 flex items-center 
-                                justify-center text-6xl group-hover:scale-110 transition-transform duration-300">
+                <div className="h-48 flex items-center 
+                                justify-center text-6xl group-hover:scale-110 transition-transform duration-300"
+                     style={{ background: 'linear-gradient(to bottom right, #F3F5F2, #e8ebe7)' }}>
                   {item.image}
                 </div>
 
                 {/* Content */}
                 <div className="p-6">
                   <div className="flex items-start justify-between mb-3">
-                    <h3 className="font-semibold text-lg text-gray-800 group-hover:text-green-600 
-                                   transition-colors line-clamp-2">
+                    <h3 className="font-semibold text-lg transition-colors line-clamp-2"
+                        style={{ color: '#1E1E1E' }}>
                       {item.judul}
                     </h3>
                   </div>
 
                   <div className="flex items-center gap-2 mb-4">
-                    <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">
+                    <span className="px-3 py-1 rounded-full text-xs font-medium"
+                          style={{ backgroundColor: '#e8f0e9', color: '#3E5F44' }}>
                       {item.kategori}
-                    </span>
-                    <span className="flex items-center gap-1 text-gray-500 text-xs">
-                      <FiEye size={14} />
-                      {item.views}
                     </span>
                   </div>
 
                   {/* Actions */}
                   <div className="flex gap-2 pt-4 border-t border-gray-100">
                     <button
-                      className="flex-1 p-2 bg-blue-50 hover:bg-blue-100 text-blue-600 rounded-lg 
-                                 transition-all font-medium text-sm flex items-center justify-center gap-2 
-                                 hover:shadow-md"
+                      className="flex-1 p-2 rounded-lg transition-all font-medium text-sm 
+                                 flex items-center justify-center gap-2 hover:shadow-md"
+                      style={{ backgroundColor: '#e8f0e9', color: '#3E5F44' }}
                       title="Edit"
                     >
                       <FiEdit2 size={16} /> Edit
@@ -261,7 +257,7 @@ export default function Edukasi() {
             {/* Modal Header */}
             <div className="sticky top-0 bg-white border-b border-gray-200 p-6 rounded-t-2xl">
               <div className="flex justify-between items-center">
-                <h2 className="text-2xl font-bold text-gray-800">Tambah Konten Edukasi</h2>
+                <h2 className="text-2xl font-bold" style={{ color: '#1E1E1E' }}>Tambah Konten Edukasi</h2>
                 <button
                   onClick={() => {
                     setShowModal(false);
@@ -279,7 +275,7 @@ export default function Edukasi() {
               
               {/* Image Upload */}
               <div className="mb-6">
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Poster/Gambar</label>
+                <label className="block text-sm font-semibold mb-2" style={{ color: '#1E1E1E' }}>Poster/Gambar</label>
                 <div className="relative">
                   <input
                     type="file"
@@ -291,16 +287,19 @@ export default function Edukasi() {
                   <label
                     htmlFor="image-upload"
                     className="flex flex-col items-center justify-center w-full h-48 border-2 
-                               border-dashed border-gray-300 rounded-xl cursor-pointer 
-                               hover:border-green-500 transition-all bg-gray-50 hover:bg-green-50"
+                               border-dashed rounded-xl cursor-pointer transition-all"
+                    style={{ 
+                      borderColor: '#BCA88D',
+                      backgroundColor: '#F3F5F2'
+                    }}
                   >
                     {imagePreview ? (
                       <img src={imagePreview} alt="Preview" className="w-full h-full object-cover rounded-xl" />
                     ) : (
                       <>
-                        <FiUpload size={32} className="text-gray-400 mb-2" />
-                        <p className="text-sm text-gray-500">Klik untuk upload gambar</p>
-                        <p className="text-xs text-gray-400 mt-1">PNG, JPG maksimal 5MB</p>
+                        <FiUpload size={32} style={{ color: '#5C6D5D' }} className="mb-2" />
+                        <p className="text-sm" style={{ color: '#5C6D5D' }}>Klik untuk upload gambar</p>
+                        <p className="text-xs mt-1" style={{ color: '#BCA88D' }}>PNG, JPG maksimal 5MB</p>
                       </>
                     )}
                   </label>
@@ -309,31 +308,37 @@ export default function Edukasi() {
 
               {/* Judul */}
               <div className="mb-5">
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Judul Konten</label>
+                <label className="block text-sm font-semibold mb-2" style={{ color: '#1E1E1E' }}>Judul Konten</label>
                 <input
                   type="text"
                   placeholder="Masukkan judul konten..."
-                  className="w-full border border-gray-300 rounded-xl p-3 focus:ring-2 focus:ring-green-500 
-                             focus:border-transparent transition-all outline-none"
+                  className="w-full border rounded-xl p-3 transition-all outline-none"
+                  style={{ borderColor: '#BCA88D' }}
+                  onFocus={(e) => e.target.style.borderColor = '#3E5F44'}
+                  onBlur={(e) => e.target.style.borderColor = '#BCA88D'}
                 />
               </div>
 
               {/* URL */}
               <div className="mb-5">
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Link URL</label>
+                <label className="block text-sm font-semibold mb-2" style={{ color: '#1E1E1E' }}>Link URL</label>
                 <input
                   type="url"
                   placeholder="https://example.com/artikel"
-                  className="w-full border border-gray-300 rounded-xl p-3 focus:ring-2 focus:ring-green-500 
-                             focus:border-transparent transition-all outline-none"
+                  className="w-full border rounded-xl p-3 transition-all outline-none"
+                  style={{ borderColor: '#BCA88D' }}
+                  onFocus={(e) => e.target.style.borderColor = '#3E5F44'}
+                  onBlur={(e) => e.target.style.borderColor = '#BCA88D'}
                 />
               </div>
 
               {/* Kategori */}
               <div className="mb-6">
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Kategori</label>
-                <select className="w-full border border-gray-300 rounded-xl p-3 focus:ring-2 
-                                   focus:ring-green-500 focus:border-transparent transition-all outline-none">
+                <label className="block text-sm font-semibold mb-2" style={{ color: '#1E1E1E' }}>Kategori</label>
+                <select className="w-full border rounded-xl p-3 transition-all outline-none"
+                        style={{ borderColor: '#BCA88D' }}
+                        onFocus={(e) => e.target.style.borderColor = '#3E5F44'}
+                        onBlur={(e) => e.target.style.borderColor = '#BCA88D'}>
                   <option>Pilih kategori</option>
                   <option>Lingkungan</option>
                   <option>Energi</option>
@@ -346,12 +351,14 @@ export default function Edukasi() {
 
               {/* Deskripsi */}
               <div className="mb-6">
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Deskripsi Singkat</label>
+                <label className="block text-sm font-semibold mb-2" style={{ color: '#1E1E1E' }}>Deskripsi Singkat</label>
                 <textarea
                   placeholder="Tulis deskripsi singkat tentang konten..."
                   rows="3"
-                  className="w-full border border-gray-300 rounded-xl p-3 focus:ring-2 focus:ring-green-500 
-                             focus:border-transparent transition-all outline-none resize-none"
+                  className="w-full border rounded-xl p-3 transition-all outline-none resize-none"
+                  style={{ borderColor: '#BCA88D' }}
+                  onFocus={(e) => e.target.style.borderColor = '#3E5F44'}
+                  onBlur={(e) => e.target.style.borderColor = '#BCA88D'}
                 />
               </div>
 
@@ -362,15 +369,15 @@ export default function Edukasi() {
                     setShowModal(false);
                     setImagePreview(null);
                   }}
-                  className="flex-1 px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-xl 
-                             font-medium transition-all"
+                  className="flex-1 px-6 py-3 rounded-xl font-medium transition-all"
+                  style={{ backgroundColor: '#F3F5F2', color: '#5C6D5D' }}
                 >
                   Batal
                 </button>
 
-                <button className="flex-1 px-6 py-3 bg-gradient-to-r from-green-500 to-green-600 
-                                   hover:from-green-600 hover:to-green-700 text-white rounded-xl 
-                                   font-medium shadow-lg hover:shadow-xl transition-all">
+                <button className="flex-1 px-6 py-3 text-white rounded-xl 
+                                   font-medium shadow-lg hover:shadow-xl transition-all"
+                        style={{ background: 'linear-gradient(to right, #3E5F44, #6C8C73)' }}>
                   Simpan
                 </button>
               </div>
@@ -389,8 +396,8 @@ export default function Edukasi() {
               <div className="mx-auto w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4">
                 <FiTrash2 size={32} className="text-red-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">Hapus Konten?</h3>
-              <p className="text-gray-600 mb-6">
+              <h3 className="text-xl font-bold mb-2" style={{ color: '#1E1E1E' }}>Hapus Konten?</h3>
+              <p style={{ color: '#5C6D5D' }} className="mb-6">
                 Apakah Anda yakin ingin menghapus "<strong>{itemToDelete?.judul}</strong>"? 
                 Tindakan ini tidak dapat dibatalkan.
               </p>
@@ -400,8 +407,8 @@ export default function Edukasi() {
                     setShowDeleteConfirm(false);
                     setItemToDelete(null);
                   }}
-                  className="flex-1 px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-xl 
-                             font-medium transition-all"
+                  className="flex-1 px-6 py-3 rounded-xl font-medium transition-all"
+                  style={{ backgroundColor: '#F3F5F2', color: '#5C6D5D' }}
                 >
                   Batal
                 </button>
@@ -416,7 +423,9 @@ export default function Edukasi() {
               </div>
             </div>
           </div>
-        </div>
+          </div>
+        
+        
       )}
 
       <style jsx>{`

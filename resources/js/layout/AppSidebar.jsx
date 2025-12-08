@@ -261,11 +261,10 @@ const AppSidebar = () => {
             onMouseLeave={() => setIsHovered(false)}
         >
             <div
-                className={`py-8 flex ${
-                    !isExpanded && !isHovered ? "lg:justify-center" : "justify-start"
-                }`}
-            >
-                <Link to="/">
+                className="py-8 flex justify-center">
+
+            
+                <Link to="/" className="flex justify-center items-center py-4">
                     {isExpanded || isHovered || isMobileOpen ? (
                         <>
                             <img
@@ -273,7 +272,7 @@ const AppSidebar = () => {
                                 src="../img/ecotrack.jpg"
                                 alt="Logo"
                                 width={120}
-                                height={50}
+                                height={45}
                             
                             />
                         </>
@@ -282,7 +281,7 @@ const AppSidebar = () => {
                             src="../img/ecotrack.jpg"
                             alt="Logo"
                             width={32}
-                            height={32}
+                            height={30}
                         />
                     )}
                 </Link>

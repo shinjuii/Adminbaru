@@ -37,7 +37,7 @@ export default function Profile() {
   };
 
   return (
-    <div className="flex min-h-screen bg-gradient-to-br from-gray-50 via-green-50/30 to-blue-50/30">
+    <div className="flex min-h-screen" style={{ background: '#F3F5F2' }}>
 
       {/* ==== SIDEBAR ==== */}
       <AppSidebar />
@@ -49,7 +49,8 @@ export default function Profile() {
         <div className="p-4 md:p-8 max-w-7xl mx-auto">
 
         {/* Profile Header Card */}
-        <div className="bg-gradient-to-br from-green-400 to-emerald-500 rounded-3xl shadow-2xl overflow-hidden mb-8 animate-fadeIn">
+        <div className="rounded-3xl shadow-2xl overflow-hidden mb-8 animate-fadeIn"
+             style={{ background: 'linear-gradient(to bottom right, #6C8C73, #3E5F44)' }}>
           <div className="p-8 md:p-10">
             <div className="flex flex-col md:flex-row items-center gap-6">
               
@@ -59,8 +60,9 @@ export default function Profile() {
                   {profileImage ? (
                     <img src={profileImage} alt="Profile" className="w-full h-full rounded-full object-cover" />
                   ) : (
-                    <div className="w-full h-full rounded-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-                      <FiUser size={48} className="text-gray-400" />
+                    <div className="w-full h-full rounded-full flex items-center justify-center"
+                         style={{ background: 'linear-gradient(to bottom right, #F3F5F2, #BCA88D)' }}>
+                      <FiUser size={48} style={{ color: '#5C6D5D' }} />
                     </div>
                   )}
                 </div>
@@ -68,7 +70,7 @@ export default function Profile() {
                 {/* Upload Button */}
                 <label htmlFor="profile-upload" className="absolute bottom-0 right-0 p-3 bg-white rounded-full shadow-lg cursor-pointer 
                                 hover:bg-gray-50 transition-all group-hover:scale-110 duration-300">
-                  <FiCamera size={20} className="text-green-600" />
+                  <FiCamera size={20} style={{ color: '#3E5F44' }} />
                   <input
                     id="profile-upload"
                     type="file"
@@ -90,16 +92,20 @@ export default function Profile() {
                     <>
                       <button
                         onClick={() => setIsEditing(true)}
-                        className="px-6 py-3 bg-white text-green-600 rounded-xl font-medium shadow-lg 
+                        className="px-6 py-3 bg-white rounded-xl font-medium shadow-lg 
                                    hover:shadow-xl transition-all flex items-center gap-2 hover:scale-105"
+                        style={{ color: '#3E5F44' }}
                       >
                         <FiEdit2 size={18} />
                         Edit Profile
                       </button>
                       <button
                         onClick={() => setShowPasswordModal(true)}
-                        className="px-6 py-3 bg-green-600 text-white rounded-xl font-medium shadow-lg 
-                                   hover:shadow-xl hover:bg-green-700 transition-all flex items-center gap-2 hover:scale-105"
+                        className="px-6 py-3 text-white rounded-xl font-medium shadow-lg 
+                                   hover:shadow-xl transition-all flex items-center gap-2 hover:scale-105"
+                        style={{ background: '#3E5F44' }}
+                        onMouseEnter={(e) => e.currentTarget.style.background = '#2d4533'}
+                        onMouseLeave={(e) => e.currentTarget.style.background = '#3E5F44'}
                       >
                         <FiLock size={18} />
                         Ganti Password
@@ -109,8 +115,9 @@ export default function Profile() {
                     <>
                       <button
                         onClick={handleSave}
-                        className="px-6 py-3 bg-white text-green-600 rounded-xl font-medium shadow-lg 
+                        className="px-6 py-3 bg-white rounded-xl font-medium shadow-lg 
                                    hover:shadow-xl transition-all flex items-center gap-2 hover:scale-105"
+                        style={{ color: '#3E5F44' }}
                       >
                         <FiSave size={18} />
                         Simpan
@@ -137,36 +144,36 @@ export default function Profile() {
           
           <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all">
             <div className="flex items-center gap-4">
-              <div className="p-3 bg-blue-100 rounded-xl">
-                <FiActivity size={24} className="text-blue-600" />
+              <div className="p-3 rounded-xl" style={{ background: 'rgba(188, 168, 141, 0.2)' }}>
+                <FiActivity size={24} style={{ color: '#BCA88D' }} />
               </div>
               <div>
-                <p className="text-gray-500 text-sm">Status Akun</p>
-                <p className="font-semibold text-gray-800">Aktif</p>
+                <p className="text-sm" style={{ color: '#5C6D5D' }}>Status Akun</p>
+                <p className="font-semibold" style={{ color: '#1E1E1E' }}>Aktif</p>
               </div>
             </div>
           </div>
 
           <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all">
             <div className="flex items-center gap-4">
-              <div className="p-3 bg-purple-100 rounded-xl">
-                <FiClock size={24} className="text-purple-600" />
+              <div className="p-3 rounded-xl" style={{ background: 'rgba(108, 140, 115, 0.2)' }}>
+                <FiClock size={24} style={{ color: '#6C8C73' }} />
               </div>
               <div>
-                <p className="text-gray-500 text-sm">Bergabung</p>
-                <p className="font-semibold text-gray-800">{formData.joinDate}</p>
+                <p className="text-sm" style={{ color: '#5C6D5D' }}>Bergabung</p>
+                <p className="font-semibold" style={{ color: '#1E1E1E' }}>{formData.joinDate}</p>
               </div>
             </div>
           </div>
 
           <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all">
             <div className="flex items-center gap-4">
-              <div className="p-3 bg-green-100 rounded-xl">
-                <FiShield size={24} className="text-green-600" />
+              <div className="p-3 rounded-xl" style={{ background: 'rgba(62, 95, 68, 0.2)' }}>
+                <FiShield size={24} style={{ color: '#3E5F44' }} />
               </div>
               <div>
-                <p className="text-gray-500 text-sm">Role</p>
-                <p className="font-semibold text-gray-800">Admin</p>
+                <p className="text-sm" style={{ color: '#5C6D5D' }}>Role</p>
+                <p className="font-semibold" style={{ color: '#1E1E1E' }}>Admin</p>
               </div>
             </div>
           </div>
@@ -174,17 +181,21 @@ export default function Profile() {
         </div>
 
         {/* Informasi Akun Section */}
-        <div className="bg-gradient-to-br from-green-100/50 to-emerald-100/50 rounded-3xl p-8 shadow-xl border border-green-200">
+        <div className="rounded-3xl p-8 shadow-xl border"
+             style={{ 
+               background: 'linear-gradient(to bottom right, rgba(108, 140, 115, 0.15), rgba(62, 95, 68, 0.15))',
+               borderColor: 'rgba(108, 140, 115, 0.3)'
+             }}>
           
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">Informasi Akun</h2>
+          <h2 className="text-2xl font-bold mb-6" style={{ color: '#1E1E1E' }}>Informasi Akun</h2>
 
           <div className="bg-white rounded-2xl p-6 shadow-lg space-y-5">
             
             {/* Nama */}
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">Nama</label>
+              <label className="block text-sm font-semibold mb-2" style={{ color: '#1E1E1E' }}>Nama</label>
               <div className="relative">
-                <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
+                <div className="absolute left-4 top-1/2 transform -translate-y-1/2" style={{ color: '#5C6D5D' }}>
                   <FiUser size={20} />
                 </div>
                 {isEditing ? (
@@ -192,12 +203,14 @@ export default function Profile() {
                     type="text"
                     value={formData.nama}
                     onChange={(e) => setFormData({...formData, nama: e.target.value})}
-                    className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 
-                               focus:ring-green-500 focus:border-transparent transition-all outline-none"
+                    className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl transition-all outline-none focus-input"
                   />
                 ) : (
-                  <div className="w-full pl-12 pr-4 py-3 bg-gradient-to-r from-green-100 to-emerald-100 
-                                  rounded-xl text-gray-800 font-medium">
+                  <div className="w-full pl-12 pr-4 py-3 rounded-xl font-medium"
+                       style={{ 
+                         background: 'linear-gradient(to right, rgba(108, 140, 115, 0.15), rgba(62, 95, 68, 0.15))',
+                         color: '#1E1E1E'
+                       }}>
                     {formData.nama}
                   </div>
                 )}
@@ -206,9 +219,9 @@ export default function Profile() {
 
             {/* Kontak/Email */}
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">Kontak</label>
+              <label className="block text-sm font-semibold mb-2" style={{ color: '#1E1E1E' }}>Kontak</label>
               <div className="relative">
-                <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
+                <div className="absolute left-4 top-1/2 transform -translate-y-1/2" style={{ color: '#5C6D5D' }}>
                   <FiMail size={20} />
                 </div>
                 {isEditing ? (
@@ -216,12 +229,14 @@ export default function Profile() {
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
-                    className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 
-                               focus:ring-green-500 focus:border-transparent transition-all outline-none"
+                    className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl transition-all outline-none focus-input"
                   />
                 ) : (
-                  <div className="w-full pl-12 pr-4 py-3 bg-gradient-to-r from-green-100 to-emerald-100 
-                                  rounded-xl text-gray-800 font-medium">
+                  <div className="w-full pl-12 pr-4 py-3 rounded-xl font-medium"
+                       style={{ 
+                         background: 'linear-gradient(to right, rgba(108, 140, 115, 0.15), rgba(62, 95, 68, 0.15))',
+                         color: '#1E1E1E'
+                       }}>
                     {formData.email}
                   </div>
                 )}
@@ -230,23 +245,25 @@ export default function Profile() {
 
             {/* Status */}
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">Status</label>
+              <label className="block text-sm font-semibold mb-2" style={{ color: '#1E1E1E' }}>Status</label>
               <div className="relative">
-                <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
+                <div className="absolute left-4 top-1/2 transform -translate-y-1/2" style={{ color: '#5C6D5D' }}>
                   <FiShield size={20} />
                 </div>
                 {isEditing ? (
                   <select
                     value={formData.status}
                     onChange={(e) => setFormData({...formData, status: e.target.value})}
-                    className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 
-                               focus:ring-green-500 focus:border-transparent transition-all outline-none"
+                    className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl transition-all outline-none focus-input"
                   >
                     <option>EcoTrack Admin</option>
                   </select>
                 ) : (
-                  <div className="w-full pl-12 pr-4 py-3 bg-gradient-to-r from-green-100 to-emerald-100 
-                                  rounded-xl text-gray-800 font-medium">
+                  <div className="w-full pl-12 pr-4 py-3 rounded-xl font-medium"
+                       style={{ 
+                         background: 'linear-gradient(to right, rgba(108, 140, 115, 0.15), rgba(62, 95, 68, 0.15))',
+                         color: '#1E1E1E'
+                       }}>
                     {formData.status}
                   </div>
                 )}
@@ -257,28 +274,26 @@ export default function Profile() {
             {isEditing && (
               <>
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Nomor Telepon</label>
+                  <label className="block text-sm font-semibold mb-2" style={{ color: '#1E1E1E' }}>Nomor Telepon</label>
                   <input
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 
-                               focus:ring-green-500 focus:border-transparent transition-all outline-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl transition-all outline-none focus-input"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Lokasi</label>
+                  <label className="block text-sm font-semibold mb-2" style={{ color: '#1E1E1E' }}>Lokasi</label>
                   <div className="relative">
-                    <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
+                    <div className="absolute left-4 top-1/2 transform -translate-y-1/2" style={{ color: '#5C6D5D' }}>
                       <FiMapPin size={20} />
                     </div>
                     <input
                       type="text"
                       value={formData.location}
                       onChange={(e) => setFormData({...formData, location: e.target.value})}
-                      className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 
-                                 focus:ring-green-500 focus:border-transparent transition-all outline-none"
+                      className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl transition-all outline-none focus-input"
                     />
                   </div>
                 </div>
@@ -299,7 +314,7 @@ export default function Profile() {
             {/* Modal Header */}
             <div className="border-b border-gray-200 p-6">
               <div className="flex justify-between items-center">
-                <h2 className="text-2xl font-bold text-gray-800">Ganti Password</h2>
+                <h2 className="text-2xl font-bold" style={{ color: '#1E1E1E' }}>Ganti Password</h2>
                 <button
                   onClick={() => setShowPasswordModal(false)}
                   className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
@@ -314,48 +329,45 @@ export default function Profile() {
               
               {/* Current Password */}
               <div className="mb-5">
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Password Lama</label>
+                <label className="block text-sm font-semibold mb-2" style={{ color: '#1E1E1E' }}>Password Lama</label>
                 <div className="relative">
-                  <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
+                  <div className="absolute left-4 top-1/2 transform -translate-y-1/2" style={{ color: '#5C6D5D' }}>
                     <FiLock size={20} />
                   </div>
                   <input
                     type="password"
                     placeholder="Masukkan password lama"
-                    className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 
-                               focus:ring-green-500 focus:border-transparent transition-all outline-none"
+                    className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl transition-all outline-none focus-input"
                   />
                 </div>
               </div>
 
               {/* New Password */}
               <div className="mb-5">
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Password Baru</label>
+                <label className="block text-sm font-semibold mb-2" style={{ color: '#1E1E1E' }}>Password Baru</label>
                 <div className="relative">
-                  <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
+                  <div className="absolute left-4 top-1/2 transform -translate-y-1/2" style={{ color: '#5C6D5D' }}>
                     <FiLock size={20} />
                   </div>
                   <input
                     type="password"
                     placeholder="Masukkan password baru"
-                    className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 
-                               focus:ring-green-500 focus:border-transparent transition-all outline-none"
+                    className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl transition-all outline-none focus-input"
                   />
                 </div>
               </div>
 
               {/* Confirm Password */}
               <div className="mb-6">
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Konfirmasi Password Baru</label>
+                <label className="block text-sm font-semibold mb-2" style={{ color: '#1E1E1E' }}>Konfirmasi Password Baru</label>
                 <div className="relative">
-                  <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
+                  <div className="absolute left-4 top-1/2 transform -translate-y-1/2" style={{ color: '#5C6D5D' }}>
                     <FiLock size={20} />
                   </div>
                   <input
                     type="password"
                     placeholder="Konfirmasi password baru"
-                    className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 
-                               focus:ring-green-500 focus:border-transparent transition-all outline-none"
+                    className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl transition-all outline-none focus-input"
                   />
                 </div>
               </div>
@@ -364,15 +376,15 @@ export default function Profile() {
               <div className="flex gap-3">
                 <button
                   onClick={() => setShowPasswordModal(false)}
-                  className="flex-1 px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-xl 
-                             font-medium transition-all"
+                  className="flex-1 px-6 py-3 rounded-xl font-medium transition-all"
+                  style={{ background: '#F3F5F2', color: '#5C6D5D' }}
                 >
                   Batal
                 </button>
 
-                <button className="flex-1 px-6 py-3 bg-gradient-to-r from-green-500 to-green-600 
-                                   hover:from-green-600 hover:to-green-700 text-white rounded-xl 
-                                   font-medium shadow-lg hover:shadow-xl transition-all">
+                <button className="flex-1 px-6 py-3 text-white rounded-xl 
+                                   font-medium shadow-lg hover:shadow-xl transition-all"
+                        style={{ background: 'linear-gradient(to right, #3E5F44, #6C8C73)' }}>
                   Simpan
                 </button>
               </div>
@@ -409,6 +421,11 @@ export default function Profile() {
 
         .animate-slideUp {
           animation: slideUp 0.3s ease-out;
+        }
+
+        .focus-input:focus {
+          border-color: #3E5F44 !important;
+          box-shadow: 0 0 0 3px rgba(62, 95, 68, 0.1);
         }
       `}</style>
     </div>
