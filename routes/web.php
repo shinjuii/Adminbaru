@@ -54,3 +54,4 @@ Route::get('/{any}', function () {
 Route::get('/csrf-token', fn() => response()->json([
     'csrf_token' => csrf_token()
 ]));
+

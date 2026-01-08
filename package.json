@@ -38,6 +38,7 @@
         "@mui/material": "^7.1.0",
         "@react-jvectormap/core": "^1.0.4",
         "@react-jvectormap/world": "^1.1.2",
+        "@supabase/supabase-js": "^2.89.0",
         "@tailwindcss/vite": "^4.1.4",
         "aos": "^2.3.4",
         "apexcharts": "^4.7.0",

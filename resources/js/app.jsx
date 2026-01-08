@@ -14,7 +14,7 @@ import FaktorEmisi from "./pages/dashboard/DashboardAdmin/FaktorEmisi";
 import Komunitas from "./pages/dashboard/DashboardAdmin/Komunitas";
 import Edukasi from "./pages/dashboard/DashboardAdmin/Edukasi";
 import Notifikasi from "./pages/dashboard/DashboardAdmin/Notifikasi";
-import LaporanEmisi from "./pages/dashboard/DashboardAdmin/LaporanEmisi";
+import CatatanDonasiOffset from "./pages/dashboard/DashboardAdmin/CatatanDonasiOffset";
 import Profile from "./pages/dashboard/DashboardAdmin/ProfileAdmin";
 
 // ===== Private Route (Frontend Only) =====
@@ -29,7 +29,7 @@ const PrivateRoute = ({ children }) => {
 };
 
 // ===== App Routes =====
-const AppRoutes = () => { 
+const AppRoutes = () => {
     return (
         <Routes>
             <Route path="/loginbaru" element={<LoginBaru />} />
@@ -70,7 +70,7 @@ const AppRoutes = () => {
                 }
             />
 
-                <Route
+            <Route
                 path="/notifikasi"
                 element={
                     <PrivateRoute>
@@ -78,23 +78,23 @@ const AppRoutes = () => {
                     </PrivateRoute>
                 }
             />
-                            <Route
+            <Route
                 path="/laporan-emisi"
                 element={
                     <PrivateRoute>
-                        <LaporanEmisi />
+                        <CatatanDonasiOffset />
                     </PrivateRoute>
                 }
-                
+
             />
-                    <Route
+            <Route
                 path="/profile"
                 element={
                     <PrivateRoute>
                         <Profile />
                     </PrivateRoute>
                 }
-                
+
             />
             {/* FIX BAGIAN INI */}
             <Route path="/" element={<Navigate to="/dashboard-admin" replace />} />
@@ -108,7 +108,7 @@ const App = () => {
     return (
         <React.StrictMode>
             <BrowserRouter>
-                {}
+                { }
                 <SidebarProvider>
                     <AppRoutes />
                 </SidebarProvider>
